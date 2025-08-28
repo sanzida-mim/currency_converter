@@ -18,4 +18,20 @@ body {
     aspect-ratio: 1 / 1.5;
     background: var(--clr-1);
     border-radius: 0.5rem;
+
+    position: relative;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5)
+    );
+    border-radius: inherit;
 }
