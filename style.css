@@ -32,7 +32,7 @@ body {
 .card::after {
     content: "";
     position: absolute;
-    inset: -0.5rem;
+    inset: -0.25rem;
     z-index: -1;
     background: conic-gradient(
         from var(--gradient-angle),
@@ -43,7 +43,7 @@ body {
         var(--clr-3)
     );
     border-radius: inherit;
-    animation: rotation 20s linear infinite;
+    animation: rotation 5s linear infinite;
 }
 
 .card::after {
