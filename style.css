@@ -63,11 +63,12 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
+    gap: 1rem;
 }
 
 .dropdown i {
     font-size: 2.5rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .select-container img {
@@ -131,4 +132,8 @@ form button {
 @keyframes rotation {
     0% { --gradient-angle: 0deg; }
     100% { --gradient-angle: 360deg; }
+}
+
+option {
+    color: var(--clr-2);
 }

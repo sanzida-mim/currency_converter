@@ -1,10 +1,18 @@
-const URL = "https://catfact.ninja/fact";
-const factPara = document.getElementById("fact");
+const BASE_URL = "https://api.fxratesapi.com/latest?base=USD&currencies=BDT&format=json";
 
-const getFacts = async () => {
-    let response = await fetch(URL);
+const dropdowns = document.querySelectorAll(".dropdown select");
 
-    console.log(response);
-    let data = await response.json();
-    factPara.innerText = data.fact;
+for (let select of dropdowns) {
+    for (currCode in countryList) {
+        let newOption = document.createElement("option");
+        newOption.innerText = currCode;
+        newOption.value = currCode;
+
+        if(select.name === "from" && currCode === "USD") {
+            newOption.selected = "selected";
+        } else if (select.name === "to" && currCode === "BDT") {
+            newOption.selected = "selected";
+        }
+        select.append(newOption);
+    }
 }
