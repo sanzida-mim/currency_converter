@@ -5,6 +5,10 @@ const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select").value;
 const toCurr = document.querySelector(".to select").value;
 
+/* This code snippet is iterating over each dropdown select element in the HTML document and populating
+it with options based on the `countryList` object. For each select element, it creates a new option
+element, sets its text and value to the currency code (currCode), and appends it to the select
+element. */
 for (let select of dropdowns) {
     for (currCode in countryList) {
         let newOption = document.createElement("option");
@@ -24,6 +28,11 @@ for (let select of dropdowns) {
     });
 }
 
+/**
+ * The function `updateFlag` updates the image source of a flag based on the selected country code.
+ * @param el - The `el` parameter in the `updateFlag` function is typically a reference to an input
+ * element, such as a dropdown select element, that contains the value representing a country code.
+ */
 const updateFlag = (el) => {
     let currCode = el.value;
     let countryCode = countryList[currCode];
