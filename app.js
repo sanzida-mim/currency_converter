@@ -2,8 +2,8 @@ const BASE_URL = "https://api.fxratesapi.com/latest?";
 
 const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
-const fromCurr = document.querySelector(".from select").value;
-const toCurr = document.querySelector(".to select").value;
+const fromCurr = document.querySelector(".from select");
+const toCurr = document.querySelector(".to select");
 
 /* This code snippet is iterating over each dropdown select element in the HTML document and populating
 it with options based on the `countryList` object. For each select element, it creates a new option
@@ -42,7 +42,7 @@ const updateFlag = (el) => {
     img.src = newSrc;
 }
 
-btn.addEventListener("click", (evt) => {
+btn.addEventListener("click", async (evt) => {
     evt.preventDefault();
     let amount = document.querySelector(".amount input");
     let amtVal= amount.value;
@@ -52,7 +52,8 @@ btn.addEventListener("click", (evt) => {
         amount.value = "1";
     }
 
-    const URL = `${BASE_URL}base=${fromCurr}&currencies=${toCurr}&format=json`;
-
-    
+    const URL = `${BASE_URL}base=${fromCurr.value.toLowerCase()}&currencies=${toCurr.value.toLowerCase()}&format=json`;
+    let response = await fetch(URL);
+    let data = await response.json();
+    console.log(data);
 })
